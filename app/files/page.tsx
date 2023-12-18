@@ -3,6 +3,7 @@ import UserFiles from '@/components/UserFiles'
 import { authOptions } from '@/lib/auth/utils'
 import { getServerSession } from 'next-auth'
 import React from 'react'
+import { db } from '@/lib/db/index';
 
 
 const FilesPage = async () => {
