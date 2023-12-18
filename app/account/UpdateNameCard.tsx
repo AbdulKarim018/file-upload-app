@@ -2,12 +2,10 @@
 import { AccountCard, AccountCardFooter, AccountCardBody } from "./AccountCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/components/ui/use-toast";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
 
 export default function UpdateNameCard({ name }: { name: string }) {
-  const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const handleSubmit = async (event: React.SyntheticEvent) => {
@@ -16,10 +14,10 @@ export default function UpdateNameCard({ name }: { name: string }) {
     const form = new FormData(target);
     const { name } = Object.fromEntries(form.entries()) as { name: string };
     if (name.length < 3) {
-      toast({
-        description: "Name must be longer than 3 characters.",
-        variant: "destructive",
-      });
+      // toast({
+      //   description: "Name must be longer than 3 characters.",
+      //   variant: "destructive",
+      // });
       return;
     }
 
@@ -30,8 +28,8 @@ export default function UpdateNameCard({ name }: { name: string }) {
         headers: { "Content-Type": "application/json" },
       });
       if (res.status === 200)
-        toast({ description: "Successfully updated name!" });
-      router.refresh();
+        // toast({ description: "Successfully updated name!" });
+        router.refresh();
     });
   };
 
