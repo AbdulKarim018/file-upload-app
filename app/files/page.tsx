@@ -13,7 +13,7 @@ const FilesPage = async () => {
   }
   const files = await db?.file.findMany({
     where: { userId: session?.user.id, },
-  })
+  });
   return (
     <>
       <div className="w-full flex flex-col gap-12 items-center justify-center">

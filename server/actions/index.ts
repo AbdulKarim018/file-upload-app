@@ -25,7 +25,7 @@ export const uploadFileDBSync = async (response: {
     },
   });
   revalidatePath('/files');
-  return addFileToUser;
+  return { msg: 'File uploaded successfully' };
 }
 
 export const deleteFileDBSync = async (id: string) => {
@@ -37,5 +37,5 @@ export const deleteFileDBSync = async (id: string) => {
     },
   });
   revalidatePath('/files');
-  return deleteFile;
+  return { msg: 'File deleted successfully' };
 };

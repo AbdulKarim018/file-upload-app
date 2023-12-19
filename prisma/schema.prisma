@@ -21,7 +21,8 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@index([key, id])
+  @@index(id)
+  @@index(key)
 }
 
 model File {
@@ -35,5 +36,5 @@ model File {
 
   User User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([userId])
+  @@index(userId)
 }
