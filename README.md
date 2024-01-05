@@ -5,4 +5,4 @@ This a minimnal file uploading application that i developed for my own use case 
 Technologies: NextJS 14, Prisma, PlanetScale (MySQL Database) and EdgeStore for file storage.
 
 # Demo
-Live Demo: 
+Live Demo: https://abdul-files.vercel.app/
