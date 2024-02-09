@@ -48,7 +48,7 @@ export const authOptions: NextAuthOptions = {
       id: "credentials",
       type: "credentials",
       credentials: {
-        key: { label: "Key", type: "text", placeholder: "XXXX-XXXX-XXXX-XXXX" },
+        key: { label: "Key", type: "password", placeholder: "XXXX-XXXX-XXXX-XXXX" },
       },
       async authorize(credentials) {
         const user = await db.user.findUnique({
